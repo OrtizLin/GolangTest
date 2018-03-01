@@ -1,7 +1,6 @@
 {
 	"comment": "",
 	"ignore": "test",
-	"package": [
-	],
-	"rootPath": "github.com/kardianos/govendor"
+	"package": [],
+	"rootPath": "goTest"
 }
