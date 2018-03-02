@@ -2,12 +2,12 @@ package main
 
 import (
 	"encoding/json"
-	//"github.com/alfredxing/calc/compute"
+	"github.com/alfredxing/calc/compute"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
 	"os"
-	//"strconv"
+	"strconv"
 )
 
 // The person Type (more like an object)
@@ -21,7 +21,10 @@ type Address struct {
 	City  string `json:"city,omitempty"`
 	State string `json:"state,omitempty"`
 }
-
+type CalcStruct struct{
+	Input string `json:"input,omitempty"`
+	Output string `json:"output,omitempty"`
+}
 var people []Person
 
 // Display all from the people var
@@ -63,15 +66,18 @@ func DeletePerson(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func Calculate(w http.ResponseWriter, r *http.Request) {
-	params := mux.Vars(r)
-	// mathString := params["id"]
-	// res, err := compute.Evaluate(mathString)
-	// if err != nil {
-	// 	json.NewEncoder(w).Encode("ERROR MESSAGE")
-	// }
-	// answerString := (strconv.FormatFloat(res, 'G', -1, 64))
-	json.NewEncoder(w).Encode(params)
+func Calc(w http.ResponseWriter, r *http.Request) {
+	var calcStruct CalcStruct
+	_ =json.NewDecoder(r.Body).Decode(&calcStruct)
+	calcInput := strings.Replace(calcStruct.Input. " ","",-1)
+	res, err:=compute.Evalute(calcInput)
+	calcStruct.Output =strconv.FormatFloat(res,'f',6,64)
+	if err !=nil{
+	json.NewEncoder(w).Encode("ERROR")
+	}
+	else{
+	json.NewEncoder(w).Encode(calcStruct)
+	}	
 }
 
 // main function to boot up everything
@@ -83,6 +89,6 @@ func main() {
 	router.HandleFunc("/people/{id}", GetPerson).Methods("GET")
 	router.HandleFunc("/people/{id}", CreatePerson).Methods("POST")
 	router.HandleFunc("/people/{id}", DeletePerson).Methods("DELETE")
-	router.HandleFunc("/calculate/{id}", Calculate).Methods("GET")
+	router.HandleFunc("/calc", Calc).Methods("GET")
 	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), router))
 }
