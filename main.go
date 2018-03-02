@@ -83,6 +83,6 @@ func main() {
 	router.HandleFunc("/people/{id}", GetPerson).Methods("GET")
 	router.HandleFunc("/people/{id}", CreatePerson).Methods("POST")
 	router.HandleFunc("/people/{id}", DeletePerson).Methods("DELETE")
-	router.HandleFunc("calculate/{id}", Calculate).Methods("POST")
+	router.HandleFunc("/calculate/{id}", Calculate).Methods("POST")
 	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), router))
 }
