@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"os"
 	"strconv"
+	"strings"
 )
 
 // The person Type (more like an object)
@@ -75,7 +76,6 @@ func Calc(w http.ResponseWriter, r *http.Request) {
 	res, err := compute.Evaluate(calcInput)
 	calcStruct.Output = strconv.FormatFloat(res, 'f', 6, 64)
 	if err != nil {
-		fmt.Printf("%s\n", "Error")
 		return
 	}
 	json.NewEncoder(w).Encode(calcStruct)
