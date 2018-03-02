@@ -64,14 +64,14 @@ func DeletePerson(w http.ResponseWriter, r *http.Request) {
 }
 
 func Calculate(w http.ResponseWriter, r *http.Request) {
-	params := mux.Vars(r)
-	mathString := params["id"]
-	res, err := compute.Evaluate(mathString)
-	if err != nil {
-		json.NewEncoder(w).Encode("ERROR MESSAGE")
-	}
-	answerString := (strconv.FormatFloat(res, 'G', -1, 64))
-	json.NewEncoder(w).Encode(answerString)
+	// params := mux.Vars(r)
+	// mathString := params["id"]
+	// res, err := compute.Evaluate(mathString)
+	// if err != nil {
+	json.NewEncoder(w).Encode("ERROR MESSAGE")
+	// }
+	// answerString := (strconv.FormatFloat(res, 'G', -1, 64))
+	// json.NewEncoder(w).Encode(answerString)
 }
 
 // main function to boot up everything
