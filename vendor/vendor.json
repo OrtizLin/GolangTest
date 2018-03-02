@@ -3,6 +3,36 @@
 	"ignore": "test",
 	"package": [
 		{
+			"checksumSHA1": "ZnWixHNsLfV+WEDT5AYw6PeD5SU=",
+			"path": "github.com/alfredxing/calc",
+			"revision": "41b6cd2d5749678fb938eabb698823552e1f7909",
+			"revisionTime": "2018-02-07T18:49:44Z"
+		},
+		{
+			"checksumSHA1": "1kTA4fNwBnDpju/6nRFMOxfvPJw=",
+			"path": "github.com/alfredxing/calc/compute",
+			"revision": "41b6cd2d5749678fb938eabb698823552e1f7909",
+			"revisionTime": "2018-02-07T18:49:44Z"
+		},
+		{
+			"checksumSHA1": "uopBAOR9B4vFcQTGQ/WPXT5MmCM=",
+			"path": "github.com/alfredxing/calc/constants",
+			"revision": "41b6cd2d5749678fb938eabb698823552e1f7909",
+			"revisionTime": "2018-02-07T18:49:44Z"
+		},
+		{
+			"checksumSHA1": "A+2ll5lqsvr9dqx5wi0ErvN01kY=",
+			"path": "github.com/alfredxing/calc/operators",
+			"revision": "41b6cd2d5749678fb938eabb698823552e1f7909",
+			"revisionTime": "2018-02-07T18:49:44Z"
+		},
+		{
+			"checksumSHA1": "rkwGqNOAdn0sPoEX7y3vCvV77MI=",
+			"path": "github.com/alfredxing/calc/operators/functions",
+			"revision": "41b6cd2d5749678fb938eabb698823552e1f7909",
+			"revisionTime": "2018-02-07T18:49:44Z"
+		},
+		{
 			"checksumSHA1": "g/V4qrXjUGG9B+e3hB+4NAYJ5Gs=",
 			"path": "github.com/gorilla/context",
 			"revision": "08b5f424b9271eedf6f9f0ce86cb9396ed337a42",
@@ -13,6 +43,24 @@
 			"path": "github.com/gorilla/mux",
 			"revision": "07ba1fd60e210dc5cc6f86ec25dc9ecc7c95c295",
 			"revisionTime": "2018-02-26T05:11:51Z"
+		},
+		{
+			"checksumSHA1": "6U7dCaxxIMjf5V02iWgyAwppczw=",
+			"path": "golang.org/x/crypto/ssh/terminal",
+			"revision": "91a49db82a88618983a78a06c1cbd4e00ab749ab",
+			"revisionTime": "2018-02-28T15:18:34Z"
+		},
+		{
+			"checksumSHA1": "gkW/8/3Zvz/RPG4W6N7Tpzzp6oY=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "f6cff0780e542efa0c8e864dc8fa522808f6a598",
+			"revisionTime": "2018-02-20T20:26:15Z"
+		},
+		{
+			"checksumSHA1": "eQq+ZoTWPjyizS9XalhZwfGjQao=",
+			"path": "golang.org/x/sys/windows",
+			"revision": "f6cff0780e542efa0c8e864dc8fa522808f6a598",
+			"revisionTime": "2018-02-20T20:26:15Z"
 		}
 	],
 	"rootPath": "goTest"
