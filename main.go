@@ -67,17 +67,18 @@ func DeletePerson(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// Calc
 func Calc(w http.ResponseWriter, r *http.Request) {
 	var calcStruct CalcStruct
 	_ = json.NewDecoder(r.Body).Decode(&calcStruct)
 	calcInput := strings.Replace(calcStruct.Input, " ", "", -1)
-	res, err := compute.Evalute(calcInput)
+	res, err := compute.Evaluate(calcInput)
 	calcStruct.Output = strconv.FormatFloat(res, 'f', 6, 64)
 	if err != nil {
-		json.NewEncoder(w).Encode("ERROR")
+		fmt.Printf("%s\n", "Error")
+		return
 	}
 	json.NewEncoder(w).Encode(calcStruct)
-
 }
 
 // main function to boot up everything
