@@ -65,13 +65,13 @@ func DeletePerson(w http.ResponseWriter, r *http.Request) {
 
 func Calculate(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
-	mathString := params["id"]
-	res, err := compute.Evaluate(mathString)
-	if err != nil {
-		json.NewEncoder(w).Encode("ERROR MESSAGE")
-	}
-	answerString := (strconv.FormatFloat(res, 'G', -1, 64))
-	json.NewEncoder(w).Encode(answerString)
+	// mathString := params["id"]
+	// res, err := compute.Evaluate(mathString)
+	// if err != nil {
+	// 	json.NewEncoder(w).Encode("ERROR MESSAGE")
+	// }
+	// answerString := (strconv.FormatFloat(res, 'G', -1, 64))
+	json.NewEncoder(w).Encode(params)
 }
 
 // main function to boot up everything
@@ -83,6 +83,6 @@ func main() {
 	router.HandleFunc("/people/{id}", GetPerson).Methods("GET")
 	router.HandleFunc("/people/{id}", CreatePerson).Methods("POST")
 	router.HandleFunc("/people/{id}", DeletePerson).Methods("DELETE")
-	router.HandleFunc("/calculate/{id}", Calculate).Methods("POST")
+	router.HandleFunc("/calculate/{id}", Calculate).Methods("GET")
 	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), router))
 }
