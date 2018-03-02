@@ -2,12 +2,12 @@ package main
 
 import (
 	"encoding/json"
-	"github.com/alfredxing/calc/compute"
+	//"github.com/alfredxing/calc/compute"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
 	"os"
-	"strconv"
+	//"strconv"
 )
 
 // The person Type (more like an object)
