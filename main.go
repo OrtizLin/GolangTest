@@ -2,12 +2,12 @@ package main
 
 import (
 	"encoding/json"
-	"github.com/alfredxing/calc/compute"
+	// "github.com/alfredxing/calc/compute"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
 	"os"
-	"strconv"
+	// "strconv"
 )
 
 // The person Type (more like an object)
@@ -63,16 +63,16 @@ func DeletePerson(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func Calculate(w http.ResponseWriter, r *http.Request) {
-	params := mux.Vars(r)
-	mathString := params["id"]
-	res, err := compute.Evaluate(mathString)
-	if err != nil {
-		json.NewEncoder(w).Encode("ERROR MESSAGE")
-	}
-	answerString := (strconv.FormatFloat(res, 'G', -1, 64))
-	json.NewEncoder(w).Encode(answerString)
-}
+// func Calculate(w http.ResponseWriter, r *http.Request) {
+// 	params := mux.Vars(r)
+// 	mathString := params["id"]
+// 	res, err := compute.Evaluate(mathString)
+// 	if err != nil {
+// 		json.NewEncoder(w).Encode("ERROR MESSAGE")
+// 	}
+// 	answerString := (strconv.FormatFloat(res, 'G', -1, 64))
+// 	json.NewEncoder(w).Encode(answerString)
+// }
 
 // main function to boot up everything
 func main() {
@@ -83,6 +83,6 @@ func main() {
 	router.HandleFunc("/people/{id}", GetPerson).Methods("GET")
 	router.HandleFunc("/people/{id}", CreatePerson).Methods("POST")
 	router.HandleFunc("/people/{id}", DeletePerson).Methods("DELETE")
-	router.HandleFunc("calculate/{id}", Calculate).Methods("POST")
+	// router.HandleFunc("calculate/{id}", Calculate).Methods("POST")
 	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), router))
 }
