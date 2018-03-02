@@ -23,6 +23,10 @@
 			"revisionTime": "2018-02-26T05:11:51Z"
 		},
 		{
+			"path": "https://github.com/alfredxing/calc",
+			"revision": ""
+		},
+		{
 			"path": "https://github.com/gorilla/mux",
 			"revision": ""
 		}
