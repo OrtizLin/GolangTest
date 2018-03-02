@@ -3,6 +3,10 @@
 	"ignore": "test",
 	"package": [
 		{
+			"path": "git://github.com/alfredxing/calc",
+			"revision": ""
+		},
+		{
 			"checksumSHA1": "g/V4qrXjUGG9B+e3hB+4NAYJ5Gs=",
 			"path": "github.com/gorilla/context",
 			"revision": "08b5f424b9271eedf6f9f0ce86cb9396ed337a42",
@@ -13,6 +17,10 @@
 			"path": "github.com/gorilla/mux",
 			"revision": "07ba1fd60e210dc5cc6f86ec25dc9ecc7c95c295",
 			"revisionTime": "2018-02-26T05:11:51Z"
+		},
+		{
+			"path": "https://github.com/alfredxing/calc",
+			"revision": ""
 		},
 		{
 			"path": "https://github.com/gorilla/mux",
